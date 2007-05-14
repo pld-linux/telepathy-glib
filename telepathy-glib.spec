@@ -11,7 +11,7 @@ URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.61
-BuildRequires:	glib2-devel >= 2.4.0
+BuildRequires:	glib2-devel >= 1:2.4.0
 BuildRequires:	gtk-doc >= 1.7
 BuildRequires:	libtool
 BuildRequires:	libtelepathy-devel
@@ -38,7 +38,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki telepathy-glib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	dbus-glib-devel >= 0.61
-Requires:	glib2-devel >= 2.4.0
+Requires:	glib2-devel >= 1:2.4.0
 
 %description devel
 Header files for telepathy-glib library.
@@ -91,10 +91,10 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libtelepathy-glib.so
+%{_libdir}/libtelepathy-glib.la
 %dir %{_includedir}/telepathy-1.0
 %dir %{_includedir}/telepathy-1.0/telepathy-glib
 %{_includedir}/telepathy-1.0/telepathy-glib/*.h
-%{_libdir}/libtelepathy-glib.la
 %{_pkgconfigdir}/telepathy-glib.pc
 %{_gtkdocdir}/*
 
