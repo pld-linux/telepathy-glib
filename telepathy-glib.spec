@@ -6,7 +6,7 @@ Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		telepathy-glib
 Version:	0.5.13
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
@@ -111,16 +111,24 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libtelepathy-glib.so
 %{_libdir}/libtelepathy-glib.la
+%{_libdir}/libtelepathy-glib-unstable.la
 %dir %{_includedir}/telepathy-1.0
+%dir %{_includedir}/telepathy-unstable
 %dir %{_includedir}/telepathy-1.0/telepathy-glib
+%dir %{_includedir}/telepathy-unstable/telepathy-glib
 %dir %{_includedir}/telepathy-1.0/telepathy-glib/_gen
+%dir %{_includedir}/telepathy-unstable/telepathy-glib/_gen
 %{_includedir}/telepathy-1.0/telepathy-glib/*.h
 %{_includedir}/telepathy-1.0/telepathy-glib/_gen/*.h
+%{_includedir}/telepathy-unstable/telepathy-glib/*.h
+%{_includedir}/telepathy-unstable/telepathy-glib/_gen/*.h
 %{_pkgconfigdir}/telepathy-glib.pc
+%{_pkgconfigdir}/telepathy-glib-unstable.pc
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libtelepathy-glib.a
+%{_libdir}/libtelepathy-glib-unstable.a
 
 %if %{with apidocs}
 %files apidocs
