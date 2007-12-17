@@ -5,19 +5,19 @@
 Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		telepathy-glib
-Version:	0.6.0
+Version:	0.7.0
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
-# Source0-md5:	dd32a28c5ca484f950302a04e04d43a7
+# Source0-md5:	b4cb035a6e235be3179364341843e929
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.61
 BuildRequires:	glib2-devel >= 1:2.4.0
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.7}
-BuildRequires:	libtelepathy-devel
+#BuildRequires:	libtelepathy-devel
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
@@ -111,20 +111,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libtelepathy-glib.so
 %{_libdir}/libtelepathy-glib.la
-%{_libdir}/libtelepathy-glib-unstable.la
-%{_libdir}/libtelepathy-glib-unstable.a
 %dir %{_includedir}/telepathy-1.0
-%dir %{_includedir}/telepathy-unstable
 %dir %{_includedir}/telepathy-1.0/telepathy-glib
-%dir %{_includedir}/telepathy-unstable/telepathy-glib
 %dir %{_includedir}/telepathy-1.0/telepathy-glib/_gen
-%dir %{_includedir}/telepathy-unstable/telepathy-glib/_gen
 %{_includedir}/telepathy-1.0/telepathy-glib/*.h
 %{_includedir}/telepathy-1.0/telepathy-glib/_gen/*.h
-%{_includedir}/telepathy-unstable/telepathy-glib/*.h
-%{_includedir}/telepathy-unstable/telepathy-glib/_gen/*.h
 %{_pkgconfigdir}/telepathy-glib.pc
-%{_pkgconfigdir}/telepathy-glib-unstable.pc
 
 %files static
 %defattr(644,root,root,755)
