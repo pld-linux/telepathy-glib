@@ -5,12 +5,12 @@
 Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		telepathy-glib
-Version:	0.7.7
+Version:	0.7.13
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
-# Source0-md5:	8fa8d14d705e57a1ec8c5c9ca5638ed0
+# Source0-md5:	e3afae16ea6b049872a0508e51b3b1e7
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
@@ -106,6 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/libtelepathy-glib.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libtelepathy-glib.so.0
 
 %files devel
 %defattr(644,root,root,755)
