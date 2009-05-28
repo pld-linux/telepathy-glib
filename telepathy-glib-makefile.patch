@@ -1,0 +1,10 @@
+--- telepathy-glib-0.7.31/telepathy-glib/Makefile.am~	2009-05-27 18:23:30.000000000 +0200
++++ telepathy-glib-0.7.31/telepathy-glib/Makefile.am	2009-05-28 12:12:20.938914582 +0200
+@@ -119,7 +119,6 @@
+     channel-iface.h \
+     channel-factory-iface.h \
+     channel-manager.h \
+-    media-interfaces.h \
+     connection.h \
+     connection-manager.h \
+     contact.h \
