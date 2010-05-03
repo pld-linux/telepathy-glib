@@ -5,18 +5,19 @@
 Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		telepathy-glib
-Version:	0.10.2
+Version:	0.11.4
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
-# Source0-md5:	588e893f86f8b179d0b48d0946c08c9d
+# Source0-md5:	5a5f43d799c3dade7bd2dbcd130fa87e
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	glib2-devel >= 1:2.20.0
+BuildRequires:	gobject-introspection-devel
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.10}
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
@@ -109,6 +110,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/libtelepathy-glib.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libtelepathy-glib.so.0
+%{_libdir}/girepository-1.0/*.typelib
 
 %files devel
 %defattr(644,root,root,755)
@@ -120,6 +122,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/telepathy-1.0/telepathy-glib/*.h
 %{_includedir}/telepathy-1.0/telepathy-glib/_gen/*.h
 %{_pkgconfigdir}/telepathy-glib.pc
+%{_datadir}/gir-1.0/*.gir
 
 %files static
 %defattr(644,root,root,755)
