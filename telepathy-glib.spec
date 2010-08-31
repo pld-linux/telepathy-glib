@@ -88,6 +88,7 @@ Dokumentacja API telepathy-glib.
 %configure \
 	--enable-silent-rules \
 	--%{?with_apidocs:en}%{!?with_apidocs:dis}able-gtk-doc \
+	--enable-vala-bindings \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
@@ -123,6 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/telepathy-1.0/telepathy-glib/_gen/*.h
 %{_pkgconfigdir}/telepathy-glib.pc
 %{_datadir}/gir-1.0/*.gir
+%{_datadir}/vala/vapi/telepathy-glib.*
 
 %files static
 %defattr(644,root,root,755)
