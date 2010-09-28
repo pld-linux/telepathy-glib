@@ -5,25 +5,25 @@
 Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		telepathy-glib
-Version:	0.11.16
+Version:	0.12.0
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
-# Source0-md5:	52b5f8ebb941fc5f400382dd4b5fa061
+# Source0-md5:	97126148b42ac4ce5db1561156180a3e
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	glib2-devel >= 1:2.20.0
-BuildRequires:	gobject-introspection-devel >= 0.6.11
+BuildRequires:	gobject-introspection-devel >= 0.9.7
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.15}
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python-modules
-BuildRequires:	vala
+BuildRequires:	vala >= 0.10.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
