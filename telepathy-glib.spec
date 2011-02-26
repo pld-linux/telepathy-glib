@@ -24,7 +24,7 @@ BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig >= 0.21
 BuildRequires:	python-modules >= 2.5
-BuildRequires:	vala >= 0.10.0
+BuildRequires:	vala >= 0.11.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
