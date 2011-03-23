@@ -6,7 +6,7 @@ Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		telepathy-glib
 Version:	0.14.1
-Release:	0.1
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
@@ -24,7 +24,7 @@ BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig >= 0.21
 BuildRequires:	python-modules >= 2.5
-BuildRequires:	vala >= 0.11.3
+BuildRequires:	vala >= 1:0.11.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
