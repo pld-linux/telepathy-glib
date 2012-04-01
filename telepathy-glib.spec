@@ -5,26 +5,26 @@
 Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		telepathy-glib
-Version:	0.16.4
+Version:	0.17.7
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
-# Source0-md5:	8335f83117323d2c1b8b012c233b7e4e
+# Source0-md5:	92e776d375cfe0ef6af4aff600a5150e
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	dbus-devel >= 0.95
-BuildRequires:	dbus-glib-devel >= 0.82
+BuildRequires:	dbus-glib-devel >= 0.90
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	glib2-devel >= 1:2.28.0
-BuildRequires:	gobject-introspection-devel >= 0.9.7
-%{?with_apidocs:BuildRequires:	gtk-doc >= 1.15}
+BuildRequires:	glib2-devel >= 1:2.30.0
+BuildRequires:	gobject-introspection-devel >= 1.30.0
+%{?with_apidocs:BuildRequires:	gtk-doc >= 1.17}
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig >= 0.21
 BuildRequires:	python-modules >= 2.5
-BuildRequires:	vala >= 2:0.11.3
+BuildRequires:	vala >= 2:0.14.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,8 +45,8 @@ Summary:	Header files for telepathy-glib library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki telepathy-glib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	dbus-glib-devel >= 0.82
-Requires:	glib2-devel >= 1:2.28.0
+Requires:	dbus-glib-devel >= 0.90
+Requires:	glib2-devel >= 1:2.30.0
 
 %description devel
 Header files for telepathy-glib library.
