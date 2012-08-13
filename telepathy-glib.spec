@@ -1,16 +1,17 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# disable gtk-doc
+%bcond_without	vala		# do not build Vala API
 #
 Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		telepathy-glib
-Version:	0.19.5
+Version:	0.19.6
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
-# Source0-md5:	4f031d8d56d11ea8d6e2722a5b1cbbb7
+# Source0-md5:	5fa6ecdb3f2b2a18d9a707e5d09fa8c7
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
@@ -24,7 +25,7 @@ BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig >= 0.21
 BuildRequires:	python-modules >= 2.5
-BuildRequires:	vala >= 2:0.14.0
+%{?with_vala:BuildRequires:	vala >= 2:0.14.0}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -78,6 +79,18 @@ telepathy-glib API documentation.
 %description apidocs -l pl.UTF-8
 Dokumentacja API telepathy-glib.
 
+%package -n vala-telepathy-glib
+Summary:	telepathy-glib API for Vala language
+Summary(pl.UTF-8):	API telepathy-glib dla języka Vala
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description -n vala-telepathy-glib
+telepathy-glib API for Vala language.
+
+%description -n vala-telepathy-glib -l pl.UTF-8
+API telepathy-glib dla języka Vala.
+
 %prep
 %setup -q
 
@@ -91,7 +104,7 @@ Dokumentacja API telepathy-glib.
 	--disable-silent-rules \
 	%{__enable_disable apidocs gtk-doc} \
 	--enable-introspection \
-	--enable-vala-bindings \
+	%{__enable_disable vala vala-bindings} \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
@@ -127,7 +140,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/telepathy-1.0/telepathy-glib/_gen/*.h
 %{_pkgconfigdir}/telepathy-glib.pc
 %{_datadir}/gir-1.0/*.gir
-%{_datadir}/vala/vapi/telepathy-glib.*
 
 %files static
 %defattr(644,root,root,755)
@@ -137,4 +149,11 @@ rm -rf $RPM_BUILD_ROOT
 %files apidocs
 %defattr(644,root,root,755)
 %{_gtkdocdir}/telepathy-glib
+%endif
+
+%if %{with vala}
+%files -n vala-telepathy-glib
+%defattr(644,root,root,755)
+%{_datadir}/vala/vapi/telepathy-glib.deps
+%{_datadir}/vala/vapi/telepathy-glib.vapi
 %endif
