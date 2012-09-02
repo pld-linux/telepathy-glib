@@ -8,7 +8,7 @@ Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komun
 Name:		telepathy-glib
 Version:	0.19.6
 Release:	1
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
 # Source0-md5:	5fa6ecdb3f2b2a18d9a707e5d09fa8c7
@@ -18,14 +18,17 @@ BuildRequires:	automake >= 1:1.11
 BuildRequires:	dbus-devel >= 0.95
 BuildRequires:	dbus-glib-devel >= 0.90
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	glib2-devel >= 1:2.30.0
+BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gobject-introspection-devel >= 1.30.0
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.17}
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
-BuildRequires:	pkgconfig >= 0.21
+BuildRequires:	pkgconfig >= 1:0.21
 BuildRequires:	python-modules >= 2.5
-%{?with_vala:BuildRequires:	vala >= 2:0.14.0}
+%{?with_vala:BuildRequires:	vala >= 2:0.16.0}
+Requires:	dbus-libs >= 0.95
+Requires:	dbus-glib >= 0.90
+Requires:	glib2 >= 1:2.30.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,8 +49,9 @@ Summary:	Header files for telepathy-glib library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki telepathy-glib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	dbus-devel >= 0.95
 Requires:	dbus-glib-devel >= 0.90
-Requires:	glib2-devel >= 1:2.30.0
+Requires:	glib2-devel >= 1:2.32.0
 
 %description devel
 Header files for telepathy-glib library.
@@ -84,6 +88,7 @@ Summary:	telepathy-glib API for Vala language
 Summary(pl.UTF-8):	API telepathy-glib dla języka Vala
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
+Requires:	vala >= 2:0.16.0
 
 %description -n vala-telepathy-glib
 telepathy-glib API for Vala language.
@@ -127,7 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/libtelepathy-glib.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libtelepathy-glib.so.0
-%{_libdir}/girepository-1.0/*.typelib
+%{_libdir}/girepository-1.0/TelepathyGLib-0.12.typelib
 
 %files devel
 %defattr(644,root,root,755)
@@ -139,7 +144,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/telepathy-1.0/telepathy-glib/*.h
 %{_includedir}/telepathy-1.0/telepathy-glib/_gen/*.h
 %{_pkgconfigdir}/telepathy-glib.pc
-%{_datadir}/gir-1.0/*.gir
+%{_datadir}/gir-1.0/TelepathyGLib-0.12.gir
 
 %files static
 %defattr(644,root,root,755)
