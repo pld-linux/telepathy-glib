@@ -6,12 +6,12 @@
 Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		telepathy-glib
-Version:	0.19.8
+Version:	0.19.9
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
-# Source0-md5:	ffd0953953981473fcd9c373ccb9e882
+# Source0-md5:	b1eaad97c9a83df4b364cad468261220
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
@@ -28,7 +28,7 @@ BuildRequires:	python-modules >= 2.5
 %{?with_vala:BuildRequires:	vala >= 2:0.16.0}
 Requires:	dbus-libs >= 0.95
 Requires:	dbus-glib >= 0.90
-Requires:	glib2 >= 1:2.30.0
+Requires:	glib2 >= 1:2.32.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -129,7 +129,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libtelepathy-glib.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libtelepathy-glib.so.0
 %{_libdir}/girepository-1.0/TelepathyGLib-0.12.typelib
