@@ -24,7 +24,7 @@ BuildRequires:	gobject-introspection-devel >= 1.30.0
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig >= 1:0.21
-BuildRequires:	python-modules >= 2.5
+BuildRequires:	python-modules >= 1:2.5
 %{?with_vala:BuildRequires:	vala >= 2:0.16.0}
 Requires:	dbus-libs >= 0.95
 Requires:	dbus-glib >= 0.90
