@@ -2,13 +2,13 @@
 # Conditional build:
 %bcond_without	apidocs		# disable gtk-doc
 %bcond_without	vala		# do not build Vala API
-#
+
 Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		telepathy-glib
 # NOTE: 0.24.x is stable, 0.25.x/0.99.x unstable
 Version:	0.24.1
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
@@ -27,8 +27,8 @@ BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig >= 1:0.21
 BuildRequires:	python-modules >= 1:2.5
 %{?with_vala:BuildRequires:	vala >= 2:0.16.0}
-Requires:	dbus-libs >= 0.95
 Requires:	dbus-glib >= 0.90
+Requires:	dbus-libs >= 0.95
 Requires:	glib2 >= 1:2.36.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -77,6 +77,9 @@ Summary:	telepathy-glib API documentation
 Summary(pl.UTF-8):	Dokumentacja API telepathy-glib
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 telepathy-glib API documentation.
