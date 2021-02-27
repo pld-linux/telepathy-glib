@@ -26,6 +26,7 @@ BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig >= 1:0.21
 BuildRequires:	python-modules >= 1:2.5
+BuildRequires:	rpm-build >= 4.6
 %{?with_vala:BuildRequires:	vala >= 2:0.16.0}
 Requires:	dbus-glib >= 0.90
 Requires:	dbus-libs >= 0.95
@@ -77,9 +78,7 @@ Summary:	telepathy-glib API documentation
 Summary(pl.UTF-8):	Dokumentacja API telepathy-glib
 Group:		Documentation
 Requires:	gtk-doc-common
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 telepathy-glib API documentation.
@@ -93,9 +92,7 @@ Summary(pl.UTF-8):	API telepathy-glib dla języka Vala
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	vala >= 2:0.16.0
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description -n vala-telepathy-glib
 telepathy-glib API for Vala language.
