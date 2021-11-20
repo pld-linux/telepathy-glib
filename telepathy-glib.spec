@@ -8,7 +8,7 @@ Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komun
 Name:		telepathy-glib
 # NOTE: 0.24.x is stable, 0.25.x/0.99.x unstable
 Version:	0.24.2
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://telepathy.freedesktop.org/releases/telepathy-glib/%{name}-%{version}.tar.gz
